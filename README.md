@@ -26,7 +26,7 @@ TBC
 TBC
 
 >### Test Case 1 
->>Log in to the website and add an wxpense.
+>>Log in to the website and add an expense.
 
 
 The following is the sequence of steps that the test case performs:
