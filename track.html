@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-gray-500 py-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-semibold"> <a href="dashboard.html"> Team D </a> </h1>
+            <nav>
+                <ul class="flex space-x-10 text-white">
+                    <li><a href="track.html" class="hover:text-gray-300">Track Expenses</a></li>
+                    <li><a href="login.html" class="hover:text-gray-300">Login</a></li>
+                    <li><a href="signup.html" class="hover:text-gray-300">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto mt-8">
+        <div class="flex justify-center space-x-10 mb-10">
+            <button id="expen" class="tab-btn font-bold bg-white border-4 rounded-xl border-blue-500 py-3 px-40 rounded-lg" onclick="openTab(event, 'expenditure')">Expenditure</button>
+            <button id="inc" class="tab-btn font-bold bg-white border-4 rounded-xl border-blue-500 py-3 px-40 rounded-lg" onclick="openTab(event, 'income')">Income</button>
+        </div>
+
+        <div id="expenditure" class="tab-content">
+            <div class="text-2xl text-white text-center font-bold mb-4">Category_1</div>
+                <table class="table-auto mx-auto w-3/5 bg-white border border-gray-200 shadow-md rounded-md">
+
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2">Description</th>
+                            <th class="px-4 py-2">Amount ($)</th>
+                            <th class="px-4 py-2">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">Took my girl shopping</td>
+                            <td class="border px-4 py-2">14,000</td>
+                            <td class="border px-4 py-2">12-4-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Went to a music festival</td>
+                            <td class="border px-4 py-2">1,023</td>
+                            <td class="border px-4 py-2">02-5-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Took my girl shopping</td>
+                            <td class="border px-4 py-2">14,000</td>
+                            <td class="border px-4 py-2">12-4-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Went to a music festival</td>
+                            <td class="border px-4 py-2">1,023</td>
+                            <td class="border px-4 py-2">02-5-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Took my girl shopping</td>
+                            <td class="border px-4 py-2">14,000</td>
+                            <td class="border px-4 py-2">12-4-2024</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="container mx-auto w-1/2 mt-5 mb-5">
+                    <div class="border bg-white h-10 rounded-md">
+                        <div class="progress_bar bg-blue-500 h-full rounded-md text-white font-bold flex items-center">
+                            <p class="px-10">Spent 30 out of 555 category_1 budget </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-2xl text-white text-center font-bold mb-4">Category_2</div>
+                <table class="table-auto mx-auto w-3/5 bg-white border border-gray-200 shadow-md rounded-md">
+
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2">Description</th>
+                            <th class="px-4 py-2">Amount ($)</th>
+                            <th class="px-4 py-2">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">Took my girl shopping</td>
+                            <td class="border px-4 py-2">14,000</td>
+                            <td class="border px-4 py-2">12-4-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Went to a music festival</td>
+                            <td class="border px-4 py-2">1,023</td>
+                            <td class="border px-4 py-2">02-5-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Took my girl shopping</td>
+                            <td class="border px-4 py-2">14,000</td>
+                            <td class="border px-4 py-2">12-4-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Went to a music festival</td>
+                            <td class="border px-4 py-2">1,023</td>
+                            <td class="border px-4 py-2">02-5-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Took my girl shopping</td>
+                            <td class="border px-4 py-2">14,000</td>
+                            <td class="border px-4 py-2">12-4-2024</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="container mx-auto w-1/2 mt-5 mb-5">
+                    <div class="border bg-white h-10 rounded-md">
+                        <div class="progress_bar bg-blue-500 h-full rounded-md text-white font-bold flex items-center">
+                            <p class="px-10">Spent 3000 out of 4555  category_2 budget </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="income" class="tab-content">
+            <div>
+                <table class="table-auto mx-auto w-3/5 bg-white border border-gray-200 shadow-md rounded-md">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2">Source</th>
+                            <th class="px-4 py-2">Amount ($)</th>
+                            <th class="px-4 py-2">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">Salary</td>
+                            <td class="border px-4 py-2">140,000</td>
+                            <td class="border px-4 py-2">02-5-2024</td>
+                        </tr>
+
+                        <tr>
+                            <td class="border px-4 py-2">Modelling</td>
+                            <td class="border px-4 py-2">23</td>
+                            <td class="border px-4 py-2">25-4-2024</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Modelling</td>
+                            <td class="border px-4 py-2">23</td>
+                            <td class="border px-4 py-2">25-4-2024</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Modelling</td>
+                            <td class="border px-4 py-2">23</td>
+                            <td class="border px-4 py-2">25-4-2024</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Modelling</td>
+                            <td class="border px-4 py-2">23</td>
+                            <td class="border px-4 py-2">25-4-2024</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabContent, tabBtn;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("bg-blue-500", "text-white");
+                tabBtn[i].classList.add("bg-white");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.remove("bg-gray-300");
+            event.currentTarget.classList.add("bg-blue-500", "text-white");
+        }
+
+        // Show the default tab on page load
+        document.getElementById("expenditure").style.display = "block";
+        document.getElementById("income").style.display = "none";
+        document.getElementById("expen").classList.remove("bg-gray-300");
+        document.getElementById("expen").classList.add("bg-blue-500", "text-white");
+        document.body.style.backgroundImage = "url('https://media.istockphoto.com/id/1255356293/photo/financial-advisor.jpg?s=1024x1024&w=is&k=20&c=n3mBMUfJ9XABo0CM7xzeAJDYaUMiERD35STR6eAU6nY=')";
+
+        progress_bar = document.querySelectorAll('.progress_bar');
+        progress_bar.forEach(i => {
+            const total = 10;
+            const achievedProgress = 7;
+            const progressWidth = (achievedProgress / total) * 100;
+            i.style.width = `${progressWidth}%`;
+        });
+
+
+    </script>
+
+</body>
+
+</html>
