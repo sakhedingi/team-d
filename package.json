@@ -1,10 +1,1 @@
-{
-  "scripts": {
-    "dev": "nodemon -e js,html,njk --watch views --watch server.js server.js"
-  },
-  "dependencies": {
-    "express": "^4.17.3",
-    "nodemon": "^2.0.15",
-    "nunjucks": "^3.2.3"
-  }
-}
+
