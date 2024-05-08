@@ -11,7 +11,7 @@
 <body class="bg-gray-100">
     <header class="bg-gray-500 py-10">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-white text-2xl font-semibold"> <a href="dashboard.html"> Team D </a> </h1>
+            <h1 class="text-white text-2xl font-semibold"> <a href="/home"> Team D </a> </h1>
             <nav>
                 <ul class="flex space-x-10 text-white">
                     <li><a href="track.html" class="hover:text-gray-300">Track Expenses</a></li>
@@ -35,41 +35,20 @@
                     <thead class="bg-gray-100">
                         <tr>
                             <th class="px-4 py-2">Description</th>
+                            <th class="px-4 py-2">Category</th>
                             <th class="px-4 py-2">Amount ($)</th>
                             <th class="px-4 py-2">Date</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for expense in expenses %}
                         <tr>
-                            <td class="border px-4 py-2">Took my girl shopping</td>
-                            <td class="border px-4 py-2">14,000</td>
-                            <td class="border px-4 py-2">12-4-2024</td>
+                            <td>{{ expense[0] }}</td>
+                            <td>{{ expense[1] }}</td>
+                            <td>{{ expense[2] }}</td>
+                            <td>{{ expense[3] }}</td>
                         </tr>
-
-                        <tr>
-                            <td class="border px-4 py-2">Went to a music festival</td>
-                            <td class="border px-4 py-2">1,023</td>
-                            <td class="border px-4 py-2">02-5-2024</td>
-                        </tr>
-
-                        <tr>
-                            <td class="border px-4 py-2">Took my girl shopping</td>
-                            <td class="border px-4 py-2">14,000</td>
-                            <td class="border px-4 py-2">12-4-2024</td>
-                        </tr>
-
-                        <tr>
-                            <td class="border px-4 py-2">Went to a music festival</td>
-                            <td class="border px-4 py-2">1,023</td>
-                            <td class="border px-4 py-2">02-5-2024</td>
-                        </tr>
-
-                        <tr>
-                            <td class="border px-4 py-2">Took my girl shopping</td>
-                            <td class="border px-4 py-2">14,000</td>
-                            <td class="border px-4 py-2">12-4-2024</td>
-                        </tr>
-
+                        {% endfor %}
                     </tbody>
                 </table>
                 <div class="container mx-auto w-1/2 mt-5 mb-5">
@@ -143,33 +122,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for income in incomes %}
                         <tr>
-                            <td class="border px-4 py-2">Salary</td>
-                            <td class="border px-4 py-2">140,000</td>
-                            <td class="border px-4 py-2">02-5-2024</td>
+                            <td>{{ income[0] }}</td>
+                            <td>{{ income[1] }}</td>
+                            <td>{{ income[2] }}</td>
                         </tr>
-
-                        <tr>
-                            <td class="border px-4 py-2">Modelling</td>
-                            <td class="border px-4 py-2">23</td>
-                            <td class="border px-4 py-2">25-4-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Modelling</td>
-                            <td class="border px-4 py-2">23</td>
-                            <td class="border px-4 py-2">25-4-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Modelling</td>
-                            <td class="border px-4 py-2">23</td>
-                            <td class="border px-4 py-2">25-4-2024</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Modelling</td>
-                            <td class="border px-4 py-2">23</td>
-                            <td class="border px-4 py-2">25-4-2024</td>
-                        </tr>
-
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
