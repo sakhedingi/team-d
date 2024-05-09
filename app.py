@@ -18,6 +18,11 @@ mysql = mysql.connector.connect(
     database=app.config['MYSQL_DB']
 )
 
+@app.route('/')
+def index():
+    # Redirect to the login page
+    return redirect(url_for('login'))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
