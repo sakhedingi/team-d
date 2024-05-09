@@ -95,10 +95,6 @@ def track():
         cursor.execute("select source, amount, date from income where user_id = %s", (user_id,))
         incomes = cursor.fetchall()
 
-        print(incomes)
-
-        print(expenses)
-
         cursor.close()
         return render_template('track.html', incomes=incomes, expenses=expenses)
     return redirect(url_for('home'))
