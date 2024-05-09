@@ -19,26 +19,34 @@ Project was created using:
 * SQL
 * HTML
 
-### Unit Tests
-TBC
-
-## Examples
-TBC
+>### Unit Tests
+>>Database testing
+>>Error handling
+>>User input validation
 
 >### Test Case 1 
->>Log in to the website and add an expense.
+>>Log in to the application and view dashboard, add income, add expense, track income, track expense.
 
+The following is the sequence of steps that the test case performs (positive & negative scenarios):
+1. Sign Up
+2. Log In
+3. Add Income
+4. Add Expense
+5. Track Income
+6. Track Expense
+7. Logout
 
-The following is the sequence of steps that the test case performs:
-1. Log into the website.
-2. Add a
-3. Proceed to
-4. Fill in
-5. Logout.
+Project was tested using *Google Chrome* and *Mozilla Firefox* browsers.
 
-Project was tested using *Google Chrome* and *Mozilla Firefox* browsers and you can simply configure the testng.xml file to switch browsers.
-
-Test data is extracted from **JSON** and **CSV** files.
+Test data is extracted from **user generated** and from **database** files.
 
 ## References
 * https://maven.apache.org/surefire/maven-surefire-plugin
+
+## Author
+1. Sakhe Dingi
+2. Augustine C. Anyasodor
+3. Adejumo Adefisayo
+4. Israel Tetteh
+5. Paul Majeogbe
+
