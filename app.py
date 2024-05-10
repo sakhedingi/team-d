@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import mysql.connector
+import bcrypt
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -28,11 +29,20 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         pwd = request.form["password"]
+
         cursor = mysql.cursor()
         cursor.execute(f"SELECT username, password FROM users WHERE username = '{username}'")
         user = cursor.fetchone()
         cursor.close()
-        if user and pwd == user[1]:
+
+        hashed_pwd = user[1].encode('utf-8')
+
+        def verify_password(pwd, hashed_pwd):
+            return bcrypt.checkpw(pwd.encode('utf-8'), hashed_pwd)
+
+        is_verified = verify_password(pwd, hashed_pwd)
+
+        if is_verified:
             session['username'] = user[0]
             return redirect(url_for('home'))
         else:
@@ -45,9 +55,16 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         pwd = request.form["password"]
+
+        def hash_password(pwd):
+            salt = bcrypt.gensalt()
+            hashed_pwd = bcrypt.hashpw(pwd.encode('utf-8'), salt)
+            return hashed_pwd
+        hashed_pwd = hash_password(pwd)
+
         cash = request.form["cash"]
         cursor = mysql.cursor()
-        cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, pwd))
+        cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_pwd))
         mysql.commit()
 
         cursor.execute(f"SELECT id FROM users WHERE username = '{username}'")
