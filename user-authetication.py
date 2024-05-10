@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import mysql.connector
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -18,18 +19,24 @@ mysql = mysql.connector.connect(
     database=app.config['MYSQL_DB']
 )
 
+def validate_signup(username, password):
+    # Example validation: Username and password should not be empty
+    if not username or not password:
+        return False
+    return True
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
         username = request.form["username"]
         pwd = request.form["password"]
         cursor = mysql.cursor()
-        cursor.execute(f"SELECT username, password FROM users WHERE username = '{username}'")
+        cursor.execute("SELECT username, password FROM users WHERE username = %s", (username,))
         user = cursor.fetchone()
         cursor.close()
-        if user and pwd == user[1]:
+        if user and check_password_hash(user[1], pwd):
             session['username'] = user[0]
-            return redirect(url_for('register'))
+            return redirect(url_for('home'))
         else:
             error = 'Invalid username or password'
             return render_template('login.html', error=error)
@@ -40,9 +47,15 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         pwd = request.form["password"]
-        cash = request.form["cash"]
+        
+        if not validate_signup(username, pwd):
+            error = 'Invalid username or password'
+            return render_template('signup.html', error=error)
+        
+        hashed_password = generate_password_hash(pwd)
+        
         cursor = mysql.cursor()
-        cursor.execute("INSERT INTO users (username, password, cash) VALUES (%s, %s, %s)", (username, pwd, cash))
+        cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_password))
         mysql.commit()
         cursor.close()
         return redirect(url_for('login'))
