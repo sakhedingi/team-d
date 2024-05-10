@@ -60,6 +60,7 @@ def register():
             salt = bcrypt.gensalt()
             hashed_pwd = bcrypt.hashpw(pwd.encode('utf-8'), salt)
             return hashed_pwd
+            
         hashed_pwd = hash_password(pwd)
 
         cash = request.form["cash"]
