@@ -55,6 +55,13 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         pwd = request.form["password"]
+        confirm_pwd = request.form["confirm_password"]
+
+        if pwd == confirm_pwd:
+            print("password match")
+        else:
+            error = "Confirm password donnot match"
+            return render_template('signup.html', error=error)
 
         def hash_password(pwd):
             salt = bcrypt.gensalt()
@@ -64,6 +71,10 @@ def register():
         hashed_pwd = hash_password(pwd)
 
         cash = request.form["cash"]
+
+        if not cash:
+            cash = 0.00
+
         cursor = mysql.cursor()
         cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_pwd))
         mysql.commit()

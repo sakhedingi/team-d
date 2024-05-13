@@ -9,12 +9,11 @@
 <body class="bg-gray-100">
 <header class="bg-gray-500 py-10">
     <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-white text-2xl font-semibold"> <a href="dashboard.html"> Team D </a> </h1>
+        <h1 class="text-white text-2xl font-semibold"> <a href=""> Personal Budget and Expense Tracker </a> </h1>
         <nav>
             <ul class="flex space-x-10 text-white">
-                <li><a href="track.html" class="hover:text-gray-300">Track Expenses</a></li>
-                <li><a href="login.html" class="hover:text-gray-300">Login</a></li>
-                <li><a href="signup.html" class="hover:text-gray-300">Sign Up</a></li>
+                <li><a href="/login" class="hover:text-gray-300">Login</a></li>
+                <li><a href="" class="hover:text-gray-300"></a></li>
             </ul>
         </nav>
     </div>
@@ -22,10 +21,13 @@
 <div class="container mx-auto mt-8">
     <div class="max-w-md mx-auto bg-white rounded-2xl shadow-md p-6">
         <h2 class="text-2xl font-semibold text-center mb-4">Sign Up</h2>
+        {% if error %}
+        <p style="color: red;">{{ error}}</p>
+        {% endif %}
         <form method="POST">
             <div class="mb-4">
                 <label class="block text-gray-700">Username</label>
-                <input name="username" class="w-full mt-1 px-4 py-2 border rounded-md">
+                <input name="username" required class="w-full mt-1 px-4 py-2 border rounded-md">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Cash</label>
@@ -33,11 +35,11 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Password</label>
-                <input type="password" name="password" class="w-full mt-1 px-4 py-2 border rounded-md">
+                <input type="password" name="password" required class="w-full mt-1 px-4 py-2 border rounded-md">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Confirm Password</label>
-                <input type="password" name="confirm_password" class="w-full mt-1 px-4 py-2 border rounded-md">
+                <input type="password" name="confirm_password" required class="w-full mt-1 px-4 py-2 border rounded-md">
             </div>
             <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Sign Up</button>
         </form>
