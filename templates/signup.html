@@ -31,8 +31,13 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Cash</label>
-                <input type="number" name="cash" class="w-full mt-1 px-4 py-2 border rounded-md">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                    </span>
+                    <input type="number" name="cash" class="w-full pl-8 pr-4 py-2 border rounded-md" placeholder="Enter amount in dollars" step="0.01" lang="en-US">
+                </div>
             </div>
+            
             <div class="mb-4">
                 <label class="block text-gray-700">Password</label>
                 <input type="password" name="password" required class="w-full mt-1 px-4 py-2 border rounded-md">
